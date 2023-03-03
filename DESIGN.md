@@ -108,10 +108,16 @@ document.addEventListener("click", function (e) {
 ## Using CalPo.
 
 1. Users can access the Calpo. using this link -> https://rindangmaaris.github.io/. Then they will see the hero page of CalPo. On the hero page, they can see
-   ![hero](https://i.ibb.co/WsXH2xr/Calpo.jpg) - CalPo. Logo - Navigation Bar (Home, About, Menu, Contacts) - Search Button (Go to Menu) - Hamburger Button (Showing up the navigation for the responsive of tablet and mobile phone) - Calculator Button (Go to Menu) - Hover Social Media Menu (WhatsApp, Facebook, Twitter, Instagram, YouTube)
+![hero](https://i.ibb.co/WsXH2xr/Calpo.jpg)
+    - CalPo. Logo
+    - Navigation Bar (Home, About, Menu, Contacts)
+    - Search Button (Go to Menu)
+    - Hamburger Button (Showing up the navigation for the responsive of tablet and mobile phone)
+    - Calculator Button (Go to Menu)
+    - Hover Social Media Menu (WhatsApp, Facebook, Twitter, Instagram, YouTube)
 2. When users click "About", they will go to the About section. It's explaining the users more about CalPo.
-   ![about](https://i.ibb.co/BKcr1Xs/about.jpg)
+![about](https://i.ibb.co/BKcr1Xs/about.jpg)
 3. Menu section is about the main of the CalPo. It contains some calculator to solve Polyhedron problem. Users just need to enter their data on the label then click "calculate" to show the solutions.
-   ![menu](https://i.ibb.co/zxHMYjz/menu.jpg)
+![menu](https://i.ibb.co/zxHMYjz/menu.jpg) 
 4. Users can reach the creator of the Calpo. easily on the Contact section. They can click on any social media icons that they wanna choose.
-   ![contact](https://i.ibb.co/dPQdpcd/contact.jpg)
+![contact](https://i.ibb.co/dPQdpcd/contact.jpg)
