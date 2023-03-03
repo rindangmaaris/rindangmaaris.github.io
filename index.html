@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CalPo</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Navbar start -->
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">Cal<span>Po</span>.</a>
+
+      <div class="navbar-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About </a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contacts</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#menu" id="search"><i data-feather="search"></i></a>
+        <a href="#" id="h-menu"><i data-feather="menu"></i></a>
+      </div>
+    </nav>
+
+    <!-- Navbar end -->
+
+    <!-- Main Start -->
+
+    <section class="hero" id="home">
+      <main class="content">
+        <h1>Calculator for <span>Polyhedron</span></h1>
+        <p>Showing the solutions in the blink of eye</p>
+        <a href="#menu" class="cta">Calculator</a>
+      </main>
+    </section>
+
+    <!-- Main End -->
+
+    <!-- About CalPo Start -->
+    <section id="about" class="about">
+      <h2>About Cal<span>Po.</span></h2>
+
+      <div class="row">
+        <div class="about-img">
+          <img src="img/about-calpo.jpg" alt="About CalPo." />
+        </div>
+        <div class="content">
+          <h3>What's Cal<span>Po.</span>?</h3>
+          <p>
+            Based on [Wikipedia] writes on
+            https://en.wikipedia.org/wiki/Polyhedron, in geometry, Polyhedron is
+            three-dimensional shape with flat polygonal faces, straight edges
+            and sharp corners or vertices.
+          </p>
+          <p>
+            CalPo. is a simple calculator that will help you to solve your
+            mathematics problem about Polyhedron. It is not only focus to
+            calculate the solutions of Polyhedron's surface area and volume, but
+            also edge, lenght, widht, height, slant height, etc.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- About CalPo End -->
+
+    <!-- Menu Start -->
+    <section id="menu" class="menu">
+      <h2>Menu of Cal<span>Po.</span></h2>
+      <section id="calpo" class="calpo">
+        <h1>Cube's Surface Area and Volume Calculator</h1>
+        <section id="content" class="content">
+          <label for="">edge (a)</label><br />
+          <input type="number" id="edgecube" /><br />
+          <button id="calculatecube" class="calculatecalpo">calculate</button>
+          <div id="outputcube"></div>
+          <script>
+            const edgecube = document.getElementById("edgecube");
+            const calculatecube = document.getElementById("calculatecube");
+            const outputcube = document.getElementById("outputcube");
+            calculatecube.addEventListener("click", function () {
+              let a = edgecube.value;
+              let b = 6 * a * a;
+              let c = 4 * a * a;
+              let d = a * a;
+              let e = a * a * a;
+              outputcube.innerHTML = `The solutions of cube's surface area and volume are <br>
+            lateral surface area = 4 x a x a = 4 x ${a} x ${a} = ${c} <br>
+            top OR bottom surface area = a x a = ${a} x ${a} = ${d} <br>
+            total surface area = 6 x a x a = 6 x ${a} x ${a} = ${b} <br>
+            volume = a x a x a = ${a} x ${a} x ${a} = ${e}`;
+            });
+          </script>
+        </section>
+
+        <h1>Cube's Edge on Surface Area or Volume Calculator</h1>
+        <section id="content" class="content">
+          <label for="">Surface Area (A)</label><br />
+          <input type="number" id="surfacecube1" /><br />
+          <label for="">Volume (V)</label><br />
+          <input type="number" id="volumecube1" /><br />
+          <button id="calculatecube1" class="calculatecalpo">calculate</button>
+          <div id="outputcube1"></div>
+          <script>
+            const surfacecube1 = document.getElementById("surfacecube1");
+            const volumecube1 = document.getElementById("volumecube1");
+            const calculatecube1 = document.getElementById("calculatecube1");
+            const outputcube1 = document.getElementById("outputcube1");
+            calculatecube1.addEventListener("click", function () {
+              let f = surfacecube1.value;
+              let g = f / 6;
+              let h = Math.sqrt(g);
+              let i = volumecube1.value;
+              let j = Math.cbrt(i);
+              outputcube1.innerHTML = `The solutions of cube's edge on surface area or volume are <br>
+        edge = square root of a = A : 6 = square root of ${f} : 6 = ${h} <br>
+        edge = cube root of a = cube root of ${i} = ${j}`;
+            });
+          </script>
+        </section>
+
+        <h1>Rectangular Tank's Surface Area and Volume Calculator</h1>
+        <section id="content" class="content">
+          <label for="">length (l)</label><br />
+          <input type="number" id="length" /><br />
+          <label for="">width (w)</label><br />
+          <input type="number" id="width" /><br />
+          <label for="">height (h)</label><br />
+          <input type="number" id="height" /><br />
+          <button id="calculatert" class="calculatecalpo">calculate</button>
+          <div id="outputrt"></div>
+          <script>
+            const length = document.getElementById("length");
+            const width = document.getElementById("width");
+            const height = document.getElementById("height");
+            const calculatert = document.getElementById("calculatert");
+            const outputrt = document.getElementById("outputrt");
+            calculatert.addEventListener("click", function () {
+              let l = length.value;
+              let k = width.value;
+              let m = height.value;
+              let n = 2 * l * k + 2 * l * m + 2 * k * m;
+              let o = 2 * (1 * l + 1 * k) * m;
+              let p = l * k;
+              let q = l * k * m;
+              outputrt.innerHTML = `The solutions of rectangular tank's surface area or volume are <br>
+        lateral surface area = 2(l + w) x h = 2(${l} + ${k})${m} = ${o} <br>
+        top OR bottom surface area = l x w = ${l} x ${k} = ${p} <br>
+        total surface area = 2(l x w + l x h + w x h) = 2(${l} x ${k} + ${l} x ${m} + ${m} x ${k}) = ${n} <br>
+        volume = l x w x h = ${l} x ${k} x ${m} = ${q}`;
+            });
+          </script>
+        </section>
+
+        <h1>Rectangular Tank's Lenght on Surface Area or Volume Calculator</h1>
+        <section id="content" class="content">
+          <label for="">Surface Area (A)</label><br />
+          <input type="number" id="surfacert1" /><br />
+          <label for="">Volume (V)</label><br />
+          <input type="number" id="volumert1" /><br />
+          <label for="">width (w)</label><br />
+          <input type="number" id="width1" /><br />
+          <label for="">height (h)</label><br />
+          <input type="number" id="height1" /><br />
+          <button id="calculatert1" class="calculatecalpo">calculate</button>
+          <div id="outputrt1"></div>
+          <script>
+            const surfacert1 = document.getElementById("surfacert1");
+            const volumert1 = document.getElementById("volumert1");
+            const width1 = document.getElementById("width1");
+            const height1 = document.getElementById("height1");
+            const calculatert1 = document.getElementById("calculatert1");
+            const outputrt1 = document.getElementById("outputrt1");
+            calculatert1.addEventListener("click", function () {
+              let r = surfacert1.value;
+              let s = width1.value;
+              let t = height1.value;
+              let u = 0.5 * r - s * t;
+              let v = 1 * s + 1 * t;
+              let w = u / v;
+              let x = volumert1.value;
+              let y = x / s / t;
+              outputrt1.innerHTML = `The solutions of rectangular tank's lenght on surface area or volume are <br>
+        l = ( A : 2 - w x h ) : ( w + h ) =  ( ${r} : 2 - ${s} x ${t} ) : ( ${s} + ${t} )  = ${w}<br>
+        l = V : (w x h) = ${x} : (${s} x ${t}) = ${y}`;
+            });
+          </script>
+        </section>
+
+        <h1>Rectangular Tank's Width on Surface Area or Volume Calculator</h1>
+        <section id="content" class="content">
+          <label for="">Surface Area (A)</label><br />
+          <input type="number" id="surfacert2" /><br />
+          <label for="">Volume (V)</label><br />
+          <input type="number" id="volumert2" /><br />
+          <label for="">lenght (l)</label><br />
+          <input type="number" id="lenght2" /><br />
+          <label for="">height (h)</label><br />
+          <input type="number" id="height2" /><br />
+          <button id="calculatert2" class="calculatecalpo">calculate</button>
+          <div id="outputrt2"></div>
+          <script>
+            const surfacert2 = document.getElementById("surfacert2");
+            const volumert2 = document.getElementById("volumert2");
+            const lenght2 = document.getElementById("lenght2");
+            const height2 = document.getElementById("height2");
+            const calculatert2 = document.getElementById("calculatert2");
+            const outputrt2 = document.getElementById("outputrt2");
+            calculatert2.addEventListener("click", function () {
+              let z = surfacert2.value;
+              let aa = lenght2.value;
+              let bb = height2.value;
+              let cc = z / 2 - aa * bb;
+              let dd = 1 * aa + 1 * bb;
+              let ee = cc / dd;
+              let ff = volumert2.value;
+              let gg = ff / aa / bb;
+              outputrt2.innerHTML = `The solutions of rectangular tank's width on surface area or volume are <br>
+        w = ( A : 2 - l x h ) : ( l + h ) =  ( ${z} : 2 - ${aa} x ${bb} ) : ( ${aa} + ${bb} )  = ${ee}<br>
+        w = V : (l x h) = ${ff} : (${aa} x ${bb}) = ${gg}`;
+            });
+          </script>
+        </section>
+
+        <h1>Rectangular Tank's Height on Surface Area or Volume Calculator</h1>
+        <section id="content" class="content">
+          <label for="">Surface Area (A)</label><br />
+          <input type="number" id="surfacert3" /><br />
+          <label for="">Volume (V)</label><br />
+          <input type="number" id="volumert3" /><br />
+          <label for="">lenght (l)</label><br />
+          <input type="number" id="lenght3" /><br />
+          <label for="">width (w)</label><br />
+          <input type="number" id="width3" /><br />
+          <button id="calculatert3" class="calculatecalpo">calculate</button>
+          <div id="outputrt3"></div>
+          <script>
+            const surfacert3 = document.getElementById("surfacert3");
+            const volumert3 = document.getElementById("volumert3");
+            const lenght3 = document.getElementById("lenght3");
+            const width3 = document.getElementById("width3");
+            const calculatert3 = document.getElementById("calculatert3");
+            const outputrt3 = document.getElementById("outputrt3");
+            calculatert3.addEventListener("click", function () {
+              let hh = surfacert3.value;
+              let ii = lenght3.value;
+              let jj = width3.value;
+              let kk = hh / 2 - ii * jj;
+              let ll = 1 * ii + 1 * jj;
+              let mm = kk / ll;
+              let nn = volumert3.value;
+              let oo = nn / ii / jj;
+              outputrt3.innerHTML = `The solutions of rectangular tank's height on surface area or volume are <br>
+        h = ( A : 2 - l x w ) : ( l + w ) =  ( ${hh} : 2 - ${ii} x ${jj} ) : ( ${ii} + ${jj} )  = ${mm}<br>
+        h = V : (l x w) = ${nn} : (${ii} x ${jj}) = ${oo}`;
+            });
+          </script>
+        </section>
+
+        <h1>
+          Right-Angled Triangular Prism's Surface Area and Volume Calculator
+        </h1>
+        <section id="content" class="content">
+          <label for="">pedestal side of the prism's base (a)</label><br />
+          <input type="number" id="sidea" /><br />
+          <label for="">height side of the prism's base (b)</label><br />
+          <input type="number" id="sideb" /><br />
+          <label for="">hypotenuse of the prism's base (c)</label><br />
+          <input type="number" id="sidec" /><br />
+          <label for="">height of the prism (h)</label><br />
+          <input type="number" id="heightp" /><br />
+          <button id="calculatetp" class="calculatecalpo">calculate</button>
+          <div id="outputtp"></div>
+          <script>
+            const sidea = document.getElementById("sidea");
+            const sideb = document.getElementById("sideb");
+            const sidec = document.getElementById("sidec");
+            const heightp = document.getElementById("heightp");
+            const calculatetp = document.getElementById("calculatetp");
+            const outputtp = document.getElementById("outputtp");
+            calculatetp.addEventListener("click", function () {
+              let pp = sidea.value;
+              let qq = sideb.value;
+              let rr = sidec.value;
+              let ss = heightp.value;
+              let tt = 0.5 * pp * qq;
+              let uu = (1 * pp + 1 * qq + 1 * rr) * ss;
+              let vv = 2 * tt + 1 * uu;
+              let ww = 0.5 * pp * qq * ss;
+              outputtp.innerHTML = `The solutions of right-angled triangular prism's surface area and volume are <br>
+        lateral surface area = (a + b + c)h = (${pp} + ${qq} + ${rr})${ss} = ${uu} <br>
+        top OR bottom surface area = 0.5 x a x b = 0.5 x ${pp} x ${qq} = ${tt} <br>
+        total surface area = 2(0.5 x a x b) + (a + b + c)h = 2(0.5 x ${pp} x ${qq}) + (${pp} + ${qq} + ${rr})${ss} = ${vv} <br>
+        volume = 0.5 x a x b x h = 0.5 x ${pp} x ${qq} x ${ss} = ${ww}`;
+            });
+          </script>
+        </section>
+
+        <h1>
+          Right-Angled Triangular Prism's Side Base on Surface Area or Volume
+          Calculator
+        </h1>
+        <section id="content" class="content">
+          <label for="">Surface Area (A)</label><br />
+          <input type="number" id="surfacetp1" /><br />
+          <label for="">Volume (V)</label><br />
+          <input type="number" id="volumetp1" /><br />
+          <label for="">other side of the prism's base (a)</label><br />
+          <input type="number" id="sided" /><br />
+          <label for="">hypotenuse of the prism's base (c)</label><br />
+          <input type="number" id="sidee" /><br />
+          <label for="">height of the prism (h)</label><br />
+          <input type="number" id="heightp1" /><br />
+          <button id="calculatetp1" class="calculatecalpo">calculate</button>
+          <div id="outputtp1"></div>
+          <script>
+            const sided = document.getElementById("sided");
+            const sidee = document.getElementById("sidee");
+            const surfacetp1 = document.getElementById("surfacetp1");
+            const volumetp1 = document.getElementById("volumetp1");
+            const heightp1 = document.getElementById("heightp1");
+            const calculatetp1 = document.getElementById("calculatetp1");
+            const outputtp1 = document.getElementById("outputtp1");
+            calculatetp1.addEventListener("click", function () {
+              let xx = sided.value;
+              let yy = sidee.value;
+              let zz = heightp1.value;
+              let a1 = surfacetp1.value;
+              let a2 = volumetp1.value;
+              let a3 = 1 * a1 - xx * zz - yy * zz;
+              let a4 = 1 * xx + 1 * zz;
+              let a5 = a3 / a4;
+              let a6 = (2 * a2) / xx / zz;
+              outputtp1.innerHTML = `The solutions of right-angled triangular prism's side base on surface area and volume are <br>
+        side base b = (A - h (c + a)) : (a + h) = (${a1} - ${zz}(${yy} + ${xx})) : (${xx} + ${zz}) = ${a5}<br>
+        side base b = 2 x V : (a x h) = 2 x ${a2} : (${xx} + ${zz}) = ${a6}`;
+            });
+          </script>
+        </section>
+
+        <h1>
+          Right-Angled Triangular Prism's Height on Surface Area or Volume
+          Calculator
+        </h1>
+        <section id="content" class="content">
+          <label for="">Surface Area (A)</label><br />
+          <input type="number" id="surfacetp2" /><br />
+          <label for="">Volume (V)</label><br />
+          <input type="number" id="volumetp2" /><br />
+          <label for="">pedestal side of the prism's base (a)</label><br />
+          <input type="number" id="sidef" /><br />
+          <label for="">height side of the prism's base (b)</label><br />
+          <input type="number" id="sideg" /><br />
+          <label for="">hypotenuse of the prism's base (c)</label><br />
+          <input type="number" id="sideh" /><br />
+          <button id="calculatetp2" class="calculatecalpo">calculate</button>
+          <div id="outputtp2"></div>
+          <script>
+            const sidef = document.getElementById("sidef");
+            const sideg = document.getElementById("sideg");
+            const sideh = document.getElementById("sideh");
+            const surfacetp2 = document.getElementById("surfacetp2");
+            const volumetp2 = document.getElementById("volumetp2");
+            const calculatetp2 = document.getElementById("calculatetp2");
+            const outputtp2 = document.getElementById("outputtp2");
+            calculatetp2.addEventListener("click", function () {
+              let b1 = sidef.value;
+              let b2 = sideg.value;
+              let b3 = sideh.value;
+              let b4 = surfacetp2.value;
+              let b5 = volumetp2.value;
+              let b6 = 1 * b4 - b1 * b2;
+              let b7 = 1 * b1 + 1 * b2 + 1 * b3;
+              let b8 = b6 / b7;
+              let b9 = (2 * b5) / b1 / b2;
+              outputtp2.innerHTML = `The solutions of right-angled triangular prism's height on surface area and volume are <br>
+        height = (A - a x b) : (a + b + c) = (${b4} - ${b1} x ${b2}) : (${b1} + ${b2} + ${b3}) = ${b8}<br>
+        height = 2 x V : (a x b) = 2 x ${b5} : (${b1} x ${b2}) = ${b9}`;
+            });
+          </script>
+        </section>
+
+        <h1>Square Pyramid's Surface Area and Volume Calculator</h1>
+        <section id="content" class="content">
+          <label for="">base edge (a)</label><br />
+          <input type="number" id="edgesp" /><br />
+          <label for="">height (h)</label><br />
+          <input type="number" id="heightsp" /><br />
+          <button id="calculatesp" class="calculatecalpo">calculate</button>
+          <div id="outputsp"></div>
+          <script>
+            const edgesp = document.getElementById("edgesp");
+            const heightsp = document.getElementById("heightsp");
+            const calculatesp = document.getElementById("calculatesp");
+            const outputsp = document.getElementById("outputsp");
+            calculatesp.addEventListener("click", function () {
+              let c1 = edgesp.value;
+              let c2 = heightsp.value;
+              let c3 = Math.sqrt(0.5 * c1 * 0.5 * c1 + c2 * c2);
+              let c4 = c1 * c1;
+              let c5 = 4 * 0.5 * c1 * c3;
+              let c6 = 1 * c4 + 1 * c5;
+              let c7 = (c4 * c2) / 3;
+              outputsp.innerHTML = `The solutions of square pyramid's surface area and volume are <br>
+        slant height (l) = ${c3}<br>
+        lateral surface area = 4 x 0.5 x a x l = 4 x 0.5 x ${c1} x ${c3} = ${c5} <br>
+        bottom surface area = a x a = ${c1} x ${c1} = ${c4} <br>
+        total surface area = 4 x 0.5 x a x l + a x a = 4 x 0.5 x ${c1} x ${c3} + ${c1} x ${c1} = ${c6} <br>
+        volume = a x a x h : 3 = ${c1} x ${c1} x ${c2} : 3 = ${c7}`;
+            });
+          </script>
+        </section>
+
+        <h1>Square Pyramid's Base Edge on Volume Calculator</h1>
+        <section id="content" class="content">
+          <label for="">Volume (V)</label><br />
+          <input type="number" id="volumesp1" /><br />
+          <label for="">height (h)</label><br />
+          <input type="number" id="heightsp1" /><br />
+          <button id="calculatesp1" class="calculatecalpo">calculate</button>
+          <div id="outputsp1"></div>
+          <script>
+            const volumesp1 = document.getElementById("volumesp1");
+            const heightsp1 = document.getElementById("heightsp1");
+            const calculatesp1 = document.getElementById("calculatesp1");
+            const outputsp1 = document.getElementById("outputsp1");
+            calculatesp1.addEventListener("click", function () {
+              let d1 = volumesp1.value;
+              let d2 = heightsp1.value;
+              let d3 = Math.sqrt((3 * d1) / d2);
+              let d4 = Math.sqrt(0.5 * d3 * 0.5 * d3 + d2 * d2);
+              outputsp1.innerHTML = `The solutions of square pyramid's base edge on volume are <br>
+        slant height (l) = square root of (0.5 x a x 0.5 x a + h x h) = square root of (0.5 x ${d3} x 0.5 x ${d3} + ${d2} x ${d2}) = ${d4}<br>
+        base edge (a) = square root of 3 x V : h = square root of 3 x ${d1} : ${d2} = ${d3}`;
+            });
+          </script>
+        </section>
+
+        <h1>Square Pyramid's Height on Volume Calculator</h1>
+        <section id="content" class="content">
+          <label for="">Volume (V)</label><br />
+          <input type="number" id="volumesp2" /><br />
+          <label for="">base edge (a)</label><br />
+          <input type="number" id="edgesp2" /><br />
+          <button id="calculatesp2" class="calculatecalpo">calculate</button>
+          <div id="outputsp2"></div>
+          <script>
+            const volumesp2 = document.getElementById("volumesp2");
+            const edgesp2 = document.getElementById("edgesp2");
+            const calculatesp2 = document.getElementById("calculatesp2");
+            const outputsp2 = document.getElementById("outputsp2");
+            calculatesp2.addEventListener("click", function () {
+              let e1 = volumesp2.value;
+              let e2 = edgesp2.value;
+              let e3 = (3 * e1) / e2 / e2;
+              let e4 = Math.sqrt(0.5 * e2 * 0.5 * e2 + e3 * e3);
+              outputsp2.innerHTML = `The solutions of square pyramid's height on volume are <br>
+        slant height (l) = square root of (0.5 x a x 0.5 x a + h x h) = square root of (0.5 x ${e2} x 0.5 x ${e2} + ${e3} x ${e3}) = ${e4}<br>
+        height (h) = 3 x V : (a x a) = 3 x ${e1} : (${e2} x ${e2}) = ${e3}`;
+            });
+          </script>
+        </section>
+
+        <h1>Right Rectangular Pyramid's Surface Area and Volume Calculator</h1>
+        <section id="content" class="content">
+          <label for="">base lenght (l)</label><br />
+          <input type="number" id="lenghtrp" /><br />
+          <label for="">base width (w)</label><br />
+          <input type="number" id="widthrp" /><br />
+          <label for="">height (h)</label><br />
+          <input type="number" id="heightrp" /><br />
+          <button id="calculaterp" class="calculatecalpo">calculate</button>
+          <div id="outputrp"></div>
+          <script>
+            const lenghtrp = document.getElementById("lenghtrp");
+            const widthrp = document.getElementById("widthrp");
+            const heightrp = document.getElementById("heightrp");
+            const calculaterp = document.getElementById("calculaterp");
+            const outputrp = document.getElementById("outputrp");
+            calculaterp.addEventListener("click", function () {
+              let f1 = lenghtrp.value;
+              let f2 = widthrp.value;
+              let f3 = heightrp.value;
+              let f4 = Math.sqrt(0.5 * f1 * 0.5 * f1 + f3 * f3);
+              let f5 = Math.sqrt(0.5 * f2 * 0.5 * f2 + f3 * f3);
+              let f6 = 2 * 0.5 * f1 * f5 + 2 * 0.5 * f2 * f4;
+              let f7 = f1 * f2;
+              let f8 = 1 * f6 + 1 * f7;
+              let f9 = (f7 * f3) / 3;
+              outputrp.innerHTML = `The solutions of right rectangular pyramid's surface area and volume are <br>
+        slant height 1 (l1) = square root of (0.5 x l x 0.5 x l + h x h) = square root of (0.5 x ${f1} x 0.5 x ${f1} + ${f3} x ${f3}) = ${f4}<br>
+        slant height 2 (l2) = square root of (0.5 x w x 0.5 x w + h x h) = square root of (0.5 x ${f2} x 0.5 x ${f2} + ${f3} x ${f3}) = ${f5}<br>
+        lateral surface area = 2 x 0.5 x l x l2 + 2 x 0.5 x w x l1 = 2 x 0.5 x ${f1} x ${f5} + 2 x 0.5 x ${f2} x ${f4} = ${f6} <br>
+        bottom surface area = l x w = ${f1} x ${f2} = ${f7} <br>
+        total surface area = 2 x 0.5 x l x l2 + 2 x 0.5 x w x l1 +  l x w = 2 x 0.5 x ${f1} x ${f5} + 2 x 0.5 x ${f2} x ${f4} + ${f1} x ${f2} = ${f8} <br>
+        volume = l x w x h : 3 = ${f1} x ${f2} x ${f3} : 3 = ${f9}`;
+            });
+          </script>
+        </section>
+
+        <h1>Right Rectangular Pyramid's Base Lenght on Volume Calculator</h1>
+        <section id="content" class="content">
+          <label for="">Volume (V)</label><br />
+          <input type="number" id="volumerp1" /><br />
+          <label for="">base width (w)</label><br />
+          <input type="number" id="widthrp1" /><br />
+          <label for="">height (h)</label><br />
+          <input type="number" id="heightrp1" /><br />
+          <button id="calculaterp1" class="calculatecalpo">calculate</button>
+          <div id="outputrp1"></div>
+          <script>
+            const volumerp1 = document.getElementById("volumerp1");
+            const widthrp1 = document.getElementById("widthrp1");
+            const heightrp1 = document.getElementById("heightrp1");
+            const calculaterp1 = document.getElementById("calculaterp1");
+            const outputrp1 = document.getElementById("outputrp1");
+            calculaterp1.addEventListener("click", function () {
+              let g1 = volumerp1.value;
+              let g2 = widthrp1.value;
+              let g3 = heightrp1.value;
+              let g4 = (3 * g1) / g2 / g3;
+              outputrp1.innerHTML = `The solution of right rectangular pyramid's base lenght on volume is <br>
+        base lenght (l) = 3 x V / (w x h) = 3 x ${g1} : (${g2} x ${g3}) = ${g4}`;
+            });
+          </script>
+        </section>
+
+        <h1>Right Rectangular Pyramid's Base Width on Volume Calculator</h1>
+        <section id="content" class="content">
+          <label for="">Volume (V)</label><br />
+          <input type="number" id="volumerp2" /><br />
+          <label for="">base lenght (l)</label><br />
+          <input type="number" id="lenghtrp2" /><br />
+          <label for="">height (h)</label><br />
+          <input type="number" id="heightrp2" /><br />
+          <button id="calculaterp2" class="calculatecalpo">calculate</button>
+          <div id="outputrp2"></div>
+          <script>
+            const volumerp2 = document.getElementById("volumerp2");
+            const lenghtrp2 = document.getElementById("lenghtrp2");
+            const heightrp2 = document.getElementById("heightrp2");
+            const calculaterp2 = document.getElementById("calculaterp2");
+            const outputrp2 = document.getElementById("outputrp2");
+            calculaterp2.addEventListener("click", function () {
+              let h1 = volumerp2.value;
+              let h2 = lenghtrp2.value;
+              let h3 = heightrp2.value;
+              let h4 = (3 * h1) / h2 / h3;
+              outputrp2.innerHTML = `The solution of right rectangular pyramid's base width on volume is <br>
+        base width (w) = 3 x V / (l x h) = 3 x ${h1} : (${h2} x ${h3}) = ${h4}`;
+            });
+          </script>
+        </section>
+
+        <h1>Right Rectangular Pyramid's Height on Volume Calculator</h1>
+        <section id="content" class="content">
+          <label for="">Volume (V)</label><br />
+          <input type="number" id="volumerp3" /><br />
+          <label for="">base lenght (l)</label><br />
+          <input type="number" id="lenghtrp3" /><br />
+          <label for="">base width (w)</label><br />
+          <input type="number" id="widthrp3" /><br />
+          <button id="calculaterp3" class="calculatecalpo">calculate</button>
+          <div id="outputrp3"></div>
+          <script>
+            const volumerp3 = document.getElementById("volumerp3");
+            const lenghtrp3 = document.getElementById("lenghtrp3");
+            const widthrp3 = document.getElementById("widthrp3");
+            const calculaterp3 = document.getElementById("calculaterp3");
+            const outputrp3 = document.getElementById("outputrp3");
+            calculaterp3.addEventListener("click", function () {
+              let i1 = volumerp3.value;
+              let i2 = lenghtrp3.value;
+              let i3 = widthrp3.value;
+              let i4 = (3 * i1) / i2 / i3;
+              outputrp3.innerHTML = `The solution of right rectangular pyramid's height on volume is <br>
+        height (h) = 3 x V / (l x w) = 3 x ${i1} : (${i2} x ${i3}) = ${i4}`;
+            });
+          </script>
+        </section>
+      </section>
+    </section>
+
+    <!-- Menu End -->
+
+    <!-- Contact Start -->
+    <section id="contact" class="contact">
+      <h2>Contact The Creator of Cal<span>Po.</span></h2>
+      <footer>
+        <p>Wanna be my student?</p>
+
+        <!--paragraph-->
+        <p>
+          I will make you falling in love <br />
+          with mathematics.
+        </p>
+        <!--social-->
+        <div class="social-icons">
+          <a href="https://wa.me/+6285643435789"
+            ><i class="fab fa-whatsapp"></i><i data-feather="phone"></i
+          ></a>
+          <a href="https://id-id.facebook.com/rindangmaaris/"
+            ><i class="fab fa-facebook-f"></i><i data-feather="facebook"></i
+          ></a>
+          <a href="https://twitter.com/RindangMaaris"
+            ><i class="fab fa-twitter"></i><i data-feather="twitter"></i
+          ></a>
+          <a href="https://www.instagram.com/rindangmaaris/"
+            ><i class="fab fa-instagram"></i><i data-feather="instagram"></i
+          ></a>
+          <a href="https://www.youtube.com/channel/UCZPnYM0ra2nwNPDYlTOU53A"
+            ><i class="fab fa-youtube"></i><i data-feather="youtube"></i
+          ></a>
+        </div>
+
+        <!--copyright-->
+        <p class="copyright">
+          Final Project for CS50x Teachers Indonesia <br />
+          2022-2023
+        </p>
+      </footer>
+
+      <!--social-attach-bar-->
+      <div class="social">
+        <a href="https://wa.me/+6285643435789"
+          ><i class="fab fa-whatsapp"></i><i data-feather="phone"></i
+        ></a>
+        <a href="https://id-id.facebook.com/rindangmaaris/"
+          ><i class="fab fa-facebook-f"></i><i data-feather="facebook"></i
+        ></a>
+        <a href="https://twitter.com/RindangMaaris"
+          ><i class="fab fa-twitter"></i><i data-feather="twitter"></i
+        ></a>
+        <a href="https://www.instagram.com/rindangmaaris/"
+          ><i class="fab fa-instagram"></i><i data-feather="instagram"></i
+        ></a>
+        <a href="https://www.youtube.com/channel/UCZPnYM0ra2nwNPDYlTOU53A"
+          ><i class="fab fa-youtube"></i><i data-feather="youtube"></i
+        ></a>
+      </div>
+    </section>
+
+    <!-- Contact End -->
+
+    <!-- Icons -->
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
